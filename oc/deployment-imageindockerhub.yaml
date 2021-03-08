@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demoprojectdeployment
+spec:
+  selector:
+    matchLabels:
+      app: demoproject
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: demoproject
+    spec:
+      containers:
+      - image: 782009/ssinghrepo:demoproject
+        name: demoproject
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9999
+      restartPolicy: Always
+      imagePullSecrets:
+      - name: dockerhubsecret

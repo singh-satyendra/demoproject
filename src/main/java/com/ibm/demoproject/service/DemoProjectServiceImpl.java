@@ -20,7 +20,7 @@ public class DemoProjectServiceImpl implements DemoProjectService {
 	@Override
 	public String demo() {
 		logger.info("Entered DemoProjectServiceImpl.demo().  demoPropertySomeProperty=" + demoPropertySomeProperty);
-		String demoData = "This is a demo message. Value of demoproperty.someproperty=" + demoPropertySomeProperty;
+		String demoData = "This is a demo message. Value of demoproperty.someproperty = " + demoPropertySomeProperty;
 		logger.info("Leaving DemoProjectServiceImpl.demo().  demoData=" + demoData);
 		return demoData;
 	}
